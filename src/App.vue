@@ -3,7 +3,7 @@
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
+          alt="NutriCare Logo"
           class="shrink mr-2"
           contain
           :src="logoNutricare"
@@ -12,7 +12,7 @@
         />
 
         <v-img
-          alt="Vuetify Name"
+          alt="NutriCare Name"
           class="shrink mt-1 hidden-sm-and-down"
           contain
           min-width="100"
@@ -27,26 +27,23 @@
     </v-app-bar>
 
     <v-content>
-      <Login />
+      <router-view />
     </v-content>
+
+    <v-footer app>Holi soy el footer</v-footer>
   </v-app>
 </template>
 
 <script>
-import Login from "./components/Login";
-
 export default {
   name: "App",
-
-  components: {
-    Login
-  },
 
   data: vm => ({
     initialDark: vm.$vuetify ? vm.$vuetify.theme.dark : false,
     logoNutricare: require("@/assets/nutricare_logo.png"),
     namelogoNutricare: require("@/assets/nutricare_namelogo.png"),
-    goDark: false
+    goDark: false,
+    expandOnHover: true
   }),
 
   beforeDestroy() {
